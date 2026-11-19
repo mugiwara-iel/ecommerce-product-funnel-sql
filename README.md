@@ -72,6 +72,6 @@ Across all 6 products, **727 carts were abandoned** (including **277 high-intent
 
 ## 📂 Repository Structure
 * `dashboard.png` — Preview of the interactive Looker Studio executive dashboard.
-* `queries/product_funnel_analysis.sql` — Full BigQuery SQL scripts for product catalog pricing, conversion funnel, and cart abandonment revenue valuation.
-* `data/product_conversion_funnel.csv` — Exported Stage 2 conversion metrics.
-* `data/product_cart_abandonment.csv` — Exported Stage 3 lost-revenue output.
+* `queries/product_funnel_analysis.sql` — BigQuery SQL scripts for product catalog pricing, SKU conversion rates, and cart abandonment revenue estimates.
+* `data/product_conversion_funnel.csv` — Aggregated conversion rate metrics by product SKU.
+* `data/product_cart_abandonment.csv` — Cart abandonment counts and estimated uncaptured revenue by product SKU.
