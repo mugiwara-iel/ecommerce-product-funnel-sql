@@ -1,7 +1,13 @@
 # E-Commerce Product Funnel & Cart Abandonment Analysis (SQL / BigQuery)
 
+🔗 **[View Live Interactive Dashboard (Looker Studio)](https://datastudio.google.com/reporting/d4471d89-71d4-4c20-8902-5496d9ca58a2)**
+
+![E-Commerce Product Funnel & Cart Abandonment Dashboard](dashboard.png)
+
+---
+
 ## 📌 Project Overview
-An end-to-end SQL product analytics project analyzing **5,000+ user clickstream events** across **6 e-commerce SKUs** (`101`, `102`, `201`, `205`, `305`, `404`) in **Google BigQuery**. While overall traffic was strong, conversion varied noticeably across product lines. This analysis isolates product-level conversion bottlenecks and quantifies the exact dollar revenue left on the table from cart and checkout abandonment.
+An end-to-end SQL and BI product analytics project analyzing **5,000+ user clickstream events** across **6 e-commerce SKUs** (`101`, `102`, `201`, `205`, `305`, `404`) in **Google BigQuery** and **Looker Studio**. While overall traffic was strong, conversion varied noticeably across product lines. This analysis isolates product-level conversion bottlenecks, quantifies the exact dollar revenue left on the table from cart and checkout abandonment, and delivers an interactive dashboard for stakeholder exploration.
 
 ---
 
@@ -12,11 +18,13 @@ An end-to-end SQL product analytics project analyzing **5,000+ user clickstream 
 
 ---
 
-## 🛠️ SQL Techniques Used (Google BigQuery)
-* **Common Table Expressions (`WITH`):** Modularized multi-step aggregations for readability and maintainability.
-* **Conditional Aggregation (`COUNT(DISTINCT CASE WHEN ...)` & `MAX(CASE WHEN ...)`):** Deduplicated user events per stage and mapped each user-product journey to its furthest funnel milestone.
-* **Safe Division (`SAFE_DIVIDE`):** Prevented division-by-zero errors when computing stage-to-stage conversion percentages.
-* **Table Joins (`JOIN`):** Combined user-level abandonment counts with SKU-level average order values (`AVG(amount)`) to estimate lost revenue.
+## 🛠️ Tools & SQL Techniques Used
+* **Google BigQuery (SQL):**
+  * **Common Table Expressions (`WITH`):** Modularized multi-step aggregations for readability and maintainability.
+  * **Conditional Aggregation (`COUNT(DISTINCT CASE WHEN ...)` & `MAX(CASE WHEN ...)`):** Deduplicated user events per stage and mapped each user-product journey to its furthest funnel milestone.
+  * **Safe Division (`SAFE_DIVIDE`):** Prevented division-by-zero errors when computing stage-to-stage conversion percentages.
+  * **Table Joins (`JOIN`):** Combined user-level abandonment counts with SKU-level average order values (`AVG(amount)`) to estimate lost revenue.
+* **Google Looker Studio (Data Studio):** Built an interactive executive dashboard featuring KPI scorecards, dedicated **Funnel SKU** and **Abandonment SKU** filter controls, conversion comparison charts, and conditional heatmap tables.
 
 ---
 
@@ -63,6 +71,7 @@ Across all 6 products, **727 carts were abandoned** (including **277 high-intent
 ---
 
 ## 📂 Repository Structure
+* `dashboard.png` — Preview of the interactive Looker Studio executive dashboard.
 * `queries/product_funnel_analysis.sql` — Full BigQuery SQL scripts for product catalog pricing, conversion funnel, and cart abandonment revenue valuation.
 * `data/product_conversion_funnel.csv` — Exported Stage 2 conversion metrics.
 * `data/product_cart_abandonment.csv` — Exported Stage 3 lost-revenue output.
